@@ -1,0 +1,7 @@
+﻿Add a task
+Edit a task
+Delete a task
+Mark task as completed
+Mark completed task as active
+Clear completed tasks
+See different views
