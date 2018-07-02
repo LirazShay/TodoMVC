@@ -71,6 +71,28 @@ namespace TodoMVC.Specs.Features
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("View all will show active and completed tasks", ((string[])(null)));
 #line 7
 this.ScenarioSetup(scenarioInfo);
+#line 8
+ testRunner.Given("I am in the todos page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 9
+ testRunner.And("there is a task \"Wake up\" in the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 10
+ testRunner.And("there is a completed task \"Clean the house\" in the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 11
+ testRunner.When("I switch to view Active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 12
+ testRunner.And("I switch to All view", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Task",
+                        "IsCompleted"});
+            table1.AddRow(new string[] {
+                        "\"Wake up\"",
+                        "false"});
+            table1.AddRow(new string[] {
+                        "\"Clean the house\"",
+                        "true"});
+#line 13
+ testRunner.Then("the task list will be", ((string)(null)), table1, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -80,8 +102,25 @@ this.ScenarioSetup(scenarioInfo);
         public virtual void ViewActiveWillShowOnlyActiveTasks()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("View Active will show only active tasks", ((string[])(null)));
-#line 9
+#line 19
 this.ScenarioSetup(scenarioInfo);
+#line 20
+ testRunner.Given("I am in the todos page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 21
+ testRunner.And("there is a task \"Wake up\" in the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 22
+ testRunner.And("there is a completed task \"Clean the house\" in the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 23
+ testRunner.When("I switch to Active view", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Task",
+                        "IsCompleted"});
+            table2.AddRow(new string[] {
+                        "\"Wake up\"",
+                        "false"});
+#line 24
+ testRunner.Then("the task list will be", ((string)(null)), table2, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -91,8 +130,25 @@ this.ScenarioSetup(scenarioInfo);
         public virtual void ViewCompletedWillShowOnlyCompletedTasks()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("View Completed will show only completed tasks", ((string[])(null)));
-#line 11
+#line 29
 this.ScenarioSetup(scenarioInfo);
+#line 30
+ testRunner.Given("I am in the todos page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 31
+ testRunner.And("there is a task \"Wake up\" in the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 32
+ testRunner.And("there is a completed task \"Clean the house\" in the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 33
+ testRunner.When("I switch to Completed view", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Task",
+                        "IsCompleted"});
+            table3.AddRow(new string[] {
+                        "\"Clean the house\"",
+                        "true"});
+#line 34
+ testRunner.Then("the task list will be", ((string)(null)), table3, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

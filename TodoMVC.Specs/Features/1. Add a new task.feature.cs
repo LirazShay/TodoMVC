@@ -70,6 +70,12 @@ namespace TodoMVC.Specs.Features
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add new task and see it in the list", ((string[])(null)));
 #line 7
 this.ScenarioSetup(scenarioInfo);
+#line 8
+ testRunner.Given("I am in the todos page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 9
+ testRunner.When("I add new task \"Clean my house\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 10
+ testRunner.Then("the task \"Clean my house\" will be added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

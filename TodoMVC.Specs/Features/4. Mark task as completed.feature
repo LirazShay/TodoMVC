@@ -5,3 +5,7 @@
 
 
 Scenario: Mark active task as completed
+	Given I am in the todos page
+	And there is a task "Wake up" in the list
+	When I make the task "Wake up" completed
+	Then the task "Wake up" will appear as completed

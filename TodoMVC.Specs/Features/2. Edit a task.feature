@@ -5,3 +5,9 @@
 
 	
 Scenario: Rename existing task
+	Given I am in the todos page
+	And there is a task "Wake up" in the list
+	When I edit the task "Wake up" to be "Go to sleep"
+	Then there will be 1 active task in the list
+         | Tasks         |
+         | "Go to sleep" |

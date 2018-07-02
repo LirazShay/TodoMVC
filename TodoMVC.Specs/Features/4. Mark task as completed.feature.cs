@@ -71,6 +71,14 @@ namespace TodoMVC.Specs.Features
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Mark active task as completed", ((string[])(null)));
 #line 7
 this.ScenarioSetup(scenarioInfo);
+#line 8
+ testRunner.Given("I am in the todos page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 9
+ testRunner.And("there is a task \"Wake up\" in the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 10
+ testRunner.When("I make the task \"Wake up\" completed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 11
+ testRunner.Then("the task \"Wake up\" will appear as completed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
