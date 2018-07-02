@@ -47,10 +47,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\Task.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TaskRow.cs" />
     <Compile Include="TodosDriver.cs" />
-    <Compile Include="TodosPage.cs" />
+    <Compile Include="Pages\TodosPage.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

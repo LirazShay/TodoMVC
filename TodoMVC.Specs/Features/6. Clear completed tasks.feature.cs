@@ -79,10 +79,15 @@ this.ScenarioSetup(scenarioInfo);
  testRunner.And("there is a completed task \"Clean the house\" in the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 11
  testRunner.When("I click on Clear completed tasks", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
+                        "TaskName",
+                        "IsCompleted"});
+            table1.AddRow(new string[] {
+                        "Wake up",
+                        "False"});
 #line 12
- testRunner.Then("the task list will contain only 1 task", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 13
- testRunner.Then("the task list will contain the active task \"Wake up\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("the task list will be", ((string)(null)), table1, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

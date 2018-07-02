@@ -4,7 +4,7 @@ using System.Linq;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 
-namespace TodoMVC.PageObjects
+namespace TodoMVC.PageObjects.Pages
 {
     public class TodosPage
     {

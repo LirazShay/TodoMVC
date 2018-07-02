@@ -9,6 +9,6 @@ Scenario: Create task, make it completed and then active
 	And there is a task "Wake up" in the list
 	When I make the task "Wake up" completed
 	And I make the task "Wake up" active
-	Then there will be 1 active task in the list
-		| Tasks     |
-		| "Wake up" |
+	Then the task list will be
+         | TaskName | IsCompleted |
+         | Wake up  | False       |

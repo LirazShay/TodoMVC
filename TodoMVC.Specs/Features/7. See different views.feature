@@ -11,9 +11,9 @@ Scenario: View all will show active and completed tasks
 	When I switch to view Active
 	And I switch to All view
 	Then the task list will be
-		| Task              | IsCompleted |
-		| "Wake up"         | false       |
-		| "Clean the house" | true        |
+		| TaskName        | IsCompleted |
+		| Wake up         | False       |
+		| Clean the house | True        |
 
 
 Scenario: View Active will show only active tasks
@@ -22,8 +22,8 @@ Scenario: View Active will show only active tasks
 	And there is a completed task "Clean the house" in the list
 	When I switch to Active view
 	Then the task list will be
-		| Task              | IsCompleted |
-		| "Wake up"         | false       |
+		| TaskName | IsCompleted |
+		| Wake up  | False       |
 
 
 Scenario: View Completed will show only completed tasks
@@ -32,5 +32,5 @@ Scenario: View Completed will show only completed tasks
 	And there is a completed task "Clean the house" in the list
 	When I switch to Completed view
 	Then the task list will be
-		| Task              | IsCompleted |
-		| "Clean the house" | true        |
+		| TaskName        | IsCompleted |
+		| Clean the house | True        |

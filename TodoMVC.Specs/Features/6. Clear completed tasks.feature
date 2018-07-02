@@ -9,5 +9,6 @@ Scenario: Clear completed tasks will delete completed tasks only
 	And there is a task "Wake up" in the list
 	And there is a completed task "Clean the house" in the list
 	When I click on Clear completed tasks
-	Then the task list will contain only 1 task
-	Then the task list will contain the active task "Wake up"
+	Then the task list will be
+         | TaskName | IsCompleted |
+         | Wake up  | False       |

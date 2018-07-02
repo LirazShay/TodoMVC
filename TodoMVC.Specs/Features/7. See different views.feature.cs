@@ -83,14 +83,14 @@ this.ScenarioSetup(scenarioInfo);
  testRunner.And("I switch to All view", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Task",
+                        "TaskName",
                         "IsCompleted"});
             table1.AddRow(new string[] {
-                        "\"Wake up\"",
-                        "false"});
+                        "Wake up",
+                        "False"});
             table1.AddRow(new string[] {
-                        "\"Clean the house\"",
-                        "true"});
+                        "Clean the house",
+                        "True"});
 #line 13
  testRunner.Then("the task list will be", ((string)(null)), table1, "Then ");
 #line hidden
@@ -114,11 +114,11 @@ this.ScenarioSetup(scenarioInfo);
  testRunner.When("I switch to Active view", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Task",
+                        "TaskName",
                         "IsCompleted"});
             table2.AddRow(new string[] {
-                        "\"Wake up\"",
-                        "false"});
+                        "Wake up",
+                        "False"});
 #line 24
  testRunner.Then("the task list will be", ((string)(null)), table2, "Then ");
 #line hidden
@@ -142,11 +142,11 @@ this.ScenarioSetup(scenarioInfo);
  testRunner.When("I switch to Completed view", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Task",
+                        "TaskName",
                         "IsCompleted"});
             table3.AddRow(new string[] {
-                        "\"Clean the house\"",
-                        "true"});
+                        "Clean the house",
+                        "True"});
 #line 34
  testRunner.Then("the task list will be", ((string)(null)), table3, "Then ");
 #line hidden

@@ -79,11 +79,13 @@ this.ScenarioSetup(scenarioInfo);
  testRunner.When("I edit the task \"Wake up\" to be \"Go to sleep\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Tasks"});
+                        "TaskName",
+                        "IsCompleted"});
             table1.AddRow(new string[] {
-                        "\"Go to sleep\""});
+                        "Go to sleep",
+                        "False"});
 #line 11
- testRunner.Then("there will be 1 active task in the list", ((string)(null)), table1, "Then ");
+ testRunner.Then("the task list will be", ((string)(null)), table1, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
