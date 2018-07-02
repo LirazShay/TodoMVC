@@ -33,7 +33,7 @@ namespace TodoMVC.Tests
                 var newTask = todosPage.TodosList.First(a=>a.TaskText== "New Task");
                 newTask.EditTask("New Name");
 
-                Assert.AreEqual("New task", newTask.TaskText);
+                Assert.AreEqual("New Name", newTask.TaskText);
             }
         }
 

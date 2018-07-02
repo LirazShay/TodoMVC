@@ -2,31 +2,34 @@
 using System.Collections.Generic;
 using System.Linq;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
 
 namespace TodoMVC.PageObjects
 {
     public class TodosPage
     {
-        private readonly IWebDriver _driver;
+        private readonly IWebDriver driver;
+
+        private IWebElement NewTaskField => driver.FindElement(By.Id("new-todo"));
 
         public TodosPage(IWebDriver driver)
         {
-            _driver = driver;
+            this.driver = driver;
+            WaitForPageLoad();
         }
 
         public void AddTask(string newTaskName)
         {
-            var addNewField = _driver.FindElement(By.ClassName("new-todo"));
-            addNewField.Click();
-            addNewField.SendKeys(newTaskName + Keys.Enter);
+            NewTaskField.Click();
+            NewTaskField.SendKeys(newTaskName + Keys.Enter);
         }
 
         public IList<TaskRow> TodosList
         {
             get
             {
-                var rows = _driver.FindElements(By.CssSelector("#todo-list li[ng-repeat*='todo in todos']"));
-                return rows.Select(a => new TaskRow(a)).ToList();
+                var rows = driver.FindElements(By.CssSelector("#todo-list li[ng-repeat*='todo in todos']"));
+                return rows.Select(a => new TaskRow(a,driver)).ToList();
             }
         }
 
@@ -37,22 +40,29 @@ namespace TodoMVC.PageObjects
 
         public void ClearAllCompletedTasks()
         {
-            _driver.FindElement(By.CssSelector("#clear-completed")).Click();
+            driver.FindElement(By.CssSelector("#clear-completed")).Click();
         }
 
         public void SelectViewAll()
         {
-            _driver.FindElement(By.XPath("//ul[@id='filters']//a[text()='All']")).Click();
+            driver.FindElement(By.XPath("//ul[@id='filters']//a[text()='All']")).Click();
         }
 
         public void SelectActiveTasksView()
         {
-            _driver.FindElement(By.XPath("//ul[@id='filters']//a[text()='Active']")).Click();
+            driver.FindElement(By.XPath("//ul[@id='filters']//a[text()='Active']")).Click();
         }
 
         public void SelectCompletedTasksView()
         {
-            _driver.FindElement(By.XPath("//ul[@id='filters']//a[text()='Completed']")).Click();
+            driver.FindElement(By.XPath("//ul[@id='filters']//a[text()='Completed']")).Click();
         }
+
+        private void WaitForPageLoad()
+        {
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(20));
+            wait.Until(a => NewTaskField.Displayed);
+        }
+
     }
 }

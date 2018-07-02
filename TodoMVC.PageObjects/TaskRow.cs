@@ -1,38 +1,55 @@
 ﻿using System;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Interactions;
 
 namespace TodoMVC.PageObjects
 {
     public class TaskRow
     {
-        private readonly IWebElement _taskRowElement;
+        private readonly IWebDriver driver;
+        private readonly IWebElement rowElement;
+        private IWebElement CompletedCheckbox => rowElement.FindElement(By.CssSelector("input[ng-model='todo.completed']"));
 
-        public TaskRow(IWebElement taskRowElement)
+        public TaskRow(IWebElement rowElement,IWebDriver driver)
         {
-            _taskRowElement = taskRowElement;
+            this.driver = driver;
+            this.rowElement = rowElement;
         }
 
-        public string TaskText => _taskRowElement.Text;
-        public bool IsCompleted => _taskRowElement.GetAttribute("class").Contains("completed");
-
+        public string TaskText => rowElement.Text;
+        public bool IsCompleted => rowElement.GetAttribute("class").Contains("completed");
+        
         public void EditTask(string newName)
         {
-            throw new NotImplementedException();
+            var editable = rowElement.FindElement(By.CssSelector("[ng-dblclick='editTodo(todo)']"));
+            Actions actions = new Actions(driver);
+            actions.MoveToElement(editable)
+                .DoubleClick()
+                .Build()
+                .Perform();
+            var input = rowElement.FindElement(By.CssSelector("form input.edit"));
+            input.Clear();
+            input.SendKeys(newName + Keys.Enter);
         }
 
         public void DeleteTask()
         {
-            throw new NotImplementedException();
+            Actions actions = new Actions(driver);
+            actions.MoveToElement(rowElement)
+                .Build()
+                .Perform();
+            rowElement.FindElement(By.CssSelector("button[ng-click='removeTodo(todo)']"))
+                .Click();
         }
 
         public void MarkCompleted()
         {
-            throw new NotImplementedException();
+            CompletedCheckbox.Click();
         }
 
         public void MarkActive()
         {
-            throw new NotImplementedException();
+            CompletedCheckbox.Click();
         }
     }
 }
