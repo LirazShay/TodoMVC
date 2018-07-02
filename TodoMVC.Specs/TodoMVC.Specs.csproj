@@ -61,10 +61,73 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Features\1. Add a new task.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>1. Add a new task.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\3. Delete a task.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>3. Delete a task.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\2. Edit a task.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>2. Edit a task.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\5. Mark completed task as active.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>5. Mark completed task as active.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\4. Mark task as completed.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>4. Mark task as completed.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\6. Clear completed tasks.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>6. Clear completed tasks.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\7. See different views.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>7. See different views.feature</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Features\1. Add a new task.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>1. Add a new task.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\3. Delete a task.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>3. Delete a task.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\2. Edit a task.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>2. Edit a task.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\5. Mark completed task as active.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>5. Mark completed task as active.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\4. Mark task as completed.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>4. Mark task as completed.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\6. Clear completed tasks.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>6. Clear completed tasks.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\7. See different views.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>7. See different views.feature.cs</LastGenOutput>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -74,7 +137,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Features\" />
     <Folder Include="Steps\" />
   </ItemGroup>
   <ItemGroup>
