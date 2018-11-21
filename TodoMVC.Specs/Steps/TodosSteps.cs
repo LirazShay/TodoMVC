@@ -11,7 +11,7 @@ using TodoMVC.PageObjects.Pages;
 
 namespace TodoMVC.Specs.Steps
 {
-    [Binding]
+   [Binding]
     public sealed class TodosSteps : TechTalk.SpecFlow.Steps
     {
         public TodosSteps(TodosDriver driver)

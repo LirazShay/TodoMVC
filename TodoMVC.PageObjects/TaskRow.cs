@@ -28,8 +28,12 @@ namespace TodoMVC.PageObjects
                 .Build()
                 .Perform();
             var input = rowElement.FindElement(By.CssSelector("form input.edit"));
-            input.Clear();
-            input.SendKeys(newName + Keys.Enter);
+            actions
+                .MoveToElement(input)
+                .SendKeys(Keys.Control + "a")
+                .SendKeys(Keys.Delete)
+                .SendKeys(newName + Keys.Enter)
+                .Build().Perform();
         }
 
         public void DeleteTask()
