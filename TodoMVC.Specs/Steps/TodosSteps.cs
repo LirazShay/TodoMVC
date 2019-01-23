@@ -59,9 +59,8 @@ namespace TodoMVC.Specs.Steps
         [Then(@"the task ""(.*)"" will be added to the list")]
         public void ThenTheTaskWillBeAddedToTheList(string taskName)
         {
-            var task = todosPage.TodosList.FirstOrDefault(a => a.TaskText == taskName);
-            Assert.That(task, Is.Not.Null);
-            Assert.That(task.TaskText, Is.EqualTo(taskName));
+            var actualTasks = todosPage.TodosList.Select(a=>a.TaskText);
+            CollectionAssert.Contains(actualTasks, taskName);
         }
 
         [When(@"I delete the task ""(.*)""")]
